@@ -9,3 +9,5 @@ Add a button to "Turn out the lights", which changes the background color to bla
 Send and alert when the tomagotchi dies, and stop moving the tomagotchi
 
 Increase hunger using the setTimeout function
+
+Create a constructor for your tomagotchi
