@@ -17,6 +17,7 @@ var tomagotchi = {
   life: true,
   eat: function(){
     this.hunger -= 3;
+    hungerMeter.innerHTML =  "Hunger Meter: " + tomagotchi.hunger
   },
   checkMorph: function(){
     if(this.age === 0){
@@ -40,3 +41,24 @@ var tomagotchi = {
     console.log("RIP " + this.name + " is Dead");
   }
 }
+
+var feed = document.getElementById("feed-button");
+var hungerMeter = document.getElementsByTagName("h2")[0];
+
+feed.addEventListener('click', function(){
+  tomagotchi.eat();
+});
+
+var i = 1;
+
+setInterval(function(){
+  var firstDiv = document.getElementById(i);
+  firstDiv.classList.add("hidden");
+  if(i % 4 === 0){
+    i = 1;
+  }else{
+    i += 1;
+  }
+  var secondDiv = document.getElementById(i);
+  secondDiv.classList.remove("hidden");
+}, 1000);
